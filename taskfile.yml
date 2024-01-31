@@ -1,0 +1,14 @@
+version: "3"
+
+tasks:
+  build:
+    cmds:
+      - go build -v -o ./.dist/pindb ./cmd/pindb/**.go
+
+  install:
+    cmds:
+      - go install ./cmd/pindb
+
+  vulns:
+    cmds:
+      - govulncheck ./...
